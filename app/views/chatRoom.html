@@ -1,0 +1,58 @@
+<div class="container-fluid" data-ng-controller="chatRoomCtrl">
+    <h3></h3>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-7 col-xs-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Common chat: you are <span class="label label-warning">{{user.username}}</span>
+                </div>
+                <div class="panel-body commonChat">
+                    <div class="list-group">
+                        <span class="list-group-item" data-ng-repeat="message in messages"
+                                ng-class="message.author.id == user.id ? 'ownMsg' : ''">
+                            <div class="msgTitle">
+                                {{message.author.username}}
+                                <small>({{message.postedDate | date : 'medium'}})</small>
+                            </div>
+
+                            <p class="list-group-item-text">{{message.message}}</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="input-group">
+                    <textarea class="form-control custom-control" rows="5"
+                              style="resize:none" data-ng-model="newMessage"></textarea>
+                    <span class="input-group-addon btn btn-primary" data-ng-click="send(newMessage)">
+                        Send
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Users
+                </div>
+                <div class="panel-body">
+                    <div class="list-group usersPanel">
+                        <a class="list-group-item userLi"
+                           class="list-group-item-warning"
+                           data-ng-class="user.id ==  privateRoom.user.id ? 'list-group-item-warning' : ''"
+                           data-ng-click="sendPrivateMessage(privateRoom)"
+                           data-ng-repeat="privateRoom in privateRooms">
+                            <h5 class="list-group-item-heading">
+                                {{privateRoom.user.username}}
+                                <span class="badge" ng-show="privateRoom.unreadMessages.length > 0">
+                                    {{privateRoom.unreadMessages.length}}
+                                </span>
+                            </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

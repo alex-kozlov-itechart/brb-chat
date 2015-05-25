@@ -1,0 +1,21 @@
+<div class="modal-header">
+    You are talking to:  <span class="label label-danger">{{room.user.username}}</span>
+    <button class="btn btn-danger btn-sm pull-right"
+        data-ng-click="close()">X</button>
+</div>
+<div class="modal-body">
+    <div class="list-group" style="min-height: 100px;">
+        <span class="list-group-item" data-ng-repeat="message in room.messages">
+            <h5 class="list-group-item-heading msgTitle">{{message.postedDate | date: 'medium'}} -- {{message.author.username}} </h5>
+            <p class="list-group-item-text">{{message.message}}</p>
+        </span>
+    </div>
+</div>
+<div class="modal-footer">
+    <textarea class="form-control custom-control" rows="5"
+              style="resize:none" data-ng-model="newMessage">
+    </textarea>
+    <span class="input-group-addon btn btn-primary" data-ng-click="send(newMessage)">
+        Send
+    </span>
+</div>

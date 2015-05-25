@@ -1,0 +1,12 @@
+{
+  "api": "/api/v1",
+  "clientAppDir": "app",
+  "address": "127.0.0.1",
+  "port": 7777,
+  "db": {
+    "url": "mongodb://alex-kozlov:qwerty1234@proximus.modulusmongo.net:27017/matox3Ot",
+    "server": "localhost",
+    "port": "27017",
+    "dbName": "brb-chat"
+  }
+}

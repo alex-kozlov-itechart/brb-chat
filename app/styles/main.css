@@ -1,0 +1,31 @@
+.navbar-brand {
+    padding-top: 0;
+}
+
+.navbar-brand img {
+    height: inherit;
+}
+
+.commonChat {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.usersPanel {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.userLi {
+    cursor: pointer;
+}
+
+.msgTitle {
+    font-size: 80%;
+    border-bottom: 1px lightgray dashed;
+}
+
+.ownMsg {
+    background-color: #FFDDBB;
+    padding: 6px;
+}

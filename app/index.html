@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html data-ng-app="angularBrbChat">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>BRB-Chat</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+    <div data-ng-controller="appCtrl">
+        <header id="header">
+            <nav class="nav navbar-inverse">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="">
+                        <img src="images/brb-logo.jpg"/>
+                    </a>
+                </div>
+            </nav>
+
+        </header>
+        <section id="content">
+            <div data-ng-view=""></div>
+        </section>
+        <footer id="footer">
+        </footer>
+    </div>
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/socket.io-client/socket.io.js"></script>
+
+    <script src="models/userModel.js"></script>
+    <script src="models/privateRoomModel.js"></script>
+    <script src="models/messageModel.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/appCtrl.js"></script>
+    <script src="scripts/controllers/chatRoomCtrl.js"></script>
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/privateRoomCtrl.js"></script>
+    <script src="scripts/services/authService.js"></script>
+    <script src="scripts/services/sessionService.js"></script>
+    <script src="scripts/services/socketService.js"></script>
+    <script src="scripts/services/chatRoomService.js"></script>
+</body>
+</html>
